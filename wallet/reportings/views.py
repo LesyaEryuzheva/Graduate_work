@@ -39,7 +39,7 @@ class StatisticsReceiptViewSet(viewsets.GenericViewSet):
 
 
 class StatisticsTransactionViewSet(viewsets.GenericViewSet):
-    authentication_classes = (TokenAuthentication,)
+    # authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated,)
 
     def list(self, *args, **kwargs):
@@ -65,8 +65,7 @@ class StatisticsTransactionViewSet(viewsets.GenericViewSet):
 
 
 class StatisticsViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
-
-    authentication_classes = (TokenAuthentication,)
+    # authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated,)
 
     def list(self, *args, **kwargs):
@@ -92,7 +91,7 @@ class StatisticsViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
 
 
 class ExportReceiptToExcelViewSet(XLSXFileMixin, ReadOnlyModelViewSet):
-    authentication_classes = (TokenAuthentication,)
+    # authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated,)
     serializer_class = ReceiptSerializer
     renderer_classes = [XLSXRenderer]
@@ -104,7 +103,7 @@ class ExportReceiptToExcelViewSet(XLSXFileMixin, ReadOnlyModelViewSet):
 
 
 class ExportTransactionsToExcelViewSet(XLSXFileMixin, ReadOnlyModelViewSet):
-    authentication_classes = (TokenAuthentication,)
+    # authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated,)
     serializer_class = TransactionSerializer
     renderer_classes = [XLSXRenderer]
